@@ -8,8 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\images\avatar.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModel\" />
-    <Folder Include="Assets\" />
     <Folder Include="DataAccess\" />
     <Folder Include="Model\" />
     <Folder Include="Common\" />

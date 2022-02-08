@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClassicWpfClient.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// LoginView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainView : Window
+    public partial class LoginView : Window
     {
-        public MainView()
+        public LoginView()
         {
             InitializeComponent();
         }

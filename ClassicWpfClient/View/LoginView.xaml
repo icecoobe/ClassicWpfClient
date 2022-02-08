@@ -1,0 +1,93 @@
+﻿<Window
+    x:Class="ClassicWpfClient.View.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ClassicWpfClient.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="系统登录"
+    Width="360"
+    Height="600"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    BorderThickness="1"
+    FontFamily="Microsoft YaHei"
+    FontWeight="ExtraLight"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ControlTemplate x:Key="CloseButtonTemplate" TargetType="Button">
+            <Border Name="btnback" Background="Transparent">
+                <Path
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Data="M0 0 12 12 M12 0 0 12"
+                    Stroke="White"
+                    StrokeThickness="1" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="btnback" Property="Background" Value="#22FFFFFF" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter TargetName="btnback" Property="Background" Value="#66FFFFFF" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+
+    <Border
+        Margin="5"
+        Background="White"
+        CornerRadius="10">
+        <Border.Effect>
+            <DropShadowEffect
+                BlurRadius="5"
+                Direction="0"
+                Opacity="0.3"
+                ShadowDepth="5"
+                Color="Gray" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.8*" />
+                <RowDefinition Height="3.0*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Border Background="#007DFA" CornerRadius="10 10 0 0" />
+            <Button
+                Width="40"
+                Height="30"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Template="{StaticResource CloseButtonTemplate}">
+                <!--  Template="{StaticResource ResourceKey=CloseButtonTemplate}">  -->
+                <!--<Button.Template>
+                    <Border Background="Transparent">
+                        <Path HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Data="M0 0 12 12 M12 0 0 12"
+                              Stroke="White"
+                              StrokeThickness="1" />
+                    </Border>
+                </Button.Template>-->
+            </Button>
+            <StackPanel Margin="0,0,0,30" VerticalAlignment="Bottom">
+                <!--<Image Source="/assets/images/avatar.jpg" />-->
+                <Border Width="100">
+                    <Border.Height>100</Border.Height>
+                    <Border.Background>
+                        <ImageBrush ImageSource="../Assets/images/avatar.jpg" />
+                    </Border.Background>
+                </Border>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="18"
+                    Foreground="White"
+                    Text="WPF管理平台" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
