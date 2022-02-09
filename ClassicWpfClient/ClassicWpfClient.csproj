@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\fonts\iconfont.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\fonts\iconfont.ttf" />
     <Resource Include="Assets\images\avatar.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
