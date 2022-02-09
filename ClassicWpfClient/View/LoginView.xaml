@@ -79,7 +79,7 @@
                 <Border Width="100">
                     <Border.Height>100</Border.Height>
                     <Border.Background>
-                        <ImageBrush ImageSource="../Assets/images/avatar.jpg" />
+                        <ImageBrush ImageSource="/Assets/images/avatar.jpg" />
                     </Border.Background>
                 </Border>
                 <TextBlock
