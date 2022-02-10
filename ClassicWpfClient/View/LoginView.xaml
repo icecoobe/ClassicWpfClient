@@ -37,6 +37,28 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
 
+        <ControlTemplate x:Key="LoginButtonTemplate" TargetType="Button">
+            <Border
+                Name="btnback"
+                Height="40"
+                Background="#007DFA"
+                CornerRadius="5">
+                <ContentControl
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="登  录"
+                    FontSize="18"
+                    Foreground="White" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="btnback" Property="Background" Value="#555" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter TargetName="btnback" Property="Background" Value="#DDD" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3" />
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA" />
         <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5" />
@@ -200,6 +222,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5"
                             SnapsToDevicePixels="True">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -313,13 +336,13 @@
                     Text="WPF管理平台" />
             </StackPanel>
 
-            <Grid Grid.Row="1" Margin="20,0">
+            <Grid Grid.Row="1" Margin="20,30,20,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="20" />
                 </Grid.RowDefinitions>
                 <TextBox
                     Height="40"
@@ -336,7 +359,7 @@
                     Grid.Row="2"
                     Height="40"
                     Style="{DynamicResource ConfirmationCodeTextBoxStyle}" />
-                <Button Grid.Row="3" Content="Login" />
+                <Button Grid.Row="3" Template="{StaticResource LoginButtonTemplate}" />
                 <TextBlock
                     Grid.Row="4"
                     Foreground="Red"
