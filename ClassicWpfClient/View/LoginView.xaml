@@ -46,9 +46,9 @@
                 <ContentControl
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Content="登  录"
+                    Content="{TemplateBinding Content}"
                     FontSize="18"
-                    Foreground="White" />
+                    Foreground="{TemplateBinding Foreground}" />
             </Border>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="true">
@@ -290,7 +290,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1.8*" />
                 <RowDefinition Height="3.0*" />
-                <RowDefinition Height="60" />
+                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
             <Border Background="#007DFA" CornerRadius="10 10 0 0" />
             <Button
@@ -336,13 +336,13 @@
                     Text="WPF管理平台" />
             </StackPanel>
 
-            <Grid Grid.Row="1" Margin="20,30,20,0">
+            <Grid Grid.Row="1" Margin="20,10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="20" />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="auto" MinHeight="23" />
                 </Grid.RowDefinitions>
                 <TextBox
                     Height="40"
@@ -359,11 +359,19 @@
                     Grid.Row="2"
                     Height="40"
                     Style="{DynamicResource ConfirmationCodeTextBoxStyle}" />
-                <Button Grid.Row="3" Template="{StaticResource LoginButtonTemplate}" />
+                <Button
+                    Grid.Row="3"
+                    Content="Login"
+                    Foreground="White"
+                    Template="{StaticResource LoginButtonTemplate}" />
                 <TextBlock
                     Grid.Row="4"
+                    FontSize="13"
                     Foreground="Red"
-                    Text="Failed to login" />
+                    LineHeight="22"
+                    Text="Failed to login"
+                    TextWrapping="Wrap"
+                    Visibility="Hidden" />
             </Grid>
 
             <Grid Grid.Row="2" Margin="20,0">
@@ -394,11 +402,25 @@
                         Text="OR" />
                 </Grid>
                 <UniformGrid Grid.Row="1" Columns="5">
-                    <Border Background="Gray" />
+                    <UniformGrid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="#DDD" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="FontSize" Value="40" />
+                            <Setter Property="FontFamily" Value="../Assets/fonts/#iconfont" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Foreground" Value="#007DFA" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </UniformGrid.Resources>
+                    <TextBlock Text="&#xe887;" />
                     <Border />
-                    <Border Background="Gray" />
+                    <TextBlock Text="&#xe623;" />
                     <Border />
-                    <Border Background="Gray" />
+                    <TextBlock Text="&#xe88a;" />
                 </UniformGrid>
             </Grid>
         </Grid>
