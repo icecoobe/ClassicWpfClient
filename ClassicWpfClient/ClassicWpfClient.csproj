@@ -19,10 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModel\" />
     <Folder Include="DataAccess\" />
     <Folder Include="Model\" />
-    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>
